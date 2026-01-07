@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user_id</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+
+  <body class="m-4">
+    <h1 class="capitalize font-semibold text-center">user id</h1>
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-600 mb-1">
+        User Name
+      </label>
+      <input
+        
+        id="username"
+        type="text"
+        placeholder="Enter user name"
+        class="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-700 "
+      />
+    </div>
+
+    <div class="mb-6">
+      <label class="block text-sm font-medium text-gray-600 mb-1">
+        Job Role
+      </label>
+      <input 
+        id="jobrole"
+        type="text"
+        placeholder="Enter job role"
+        class="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-700 "
+      />
+    </div>
+
+    <button
+      onclick="submitData()"
+      class="w-full bg-blue-600 text-white font-medium py-2.5 rounded-lg hover:bg-blue-700 "
+    >
+      Add User
+    </button>
+
+    <div class="my-6 border-t border-gray-200"></div>
+
+    <div id="result" class="space-y-3"></div>
+
+    <script src="/src/main.js"></script>
+  </body>
+</html>
