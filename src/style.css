@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+.developer-role{
+    margin: 2px;
+    padding: 2px;
+    color: #68ca42;
+}
+.other-role{
+    margin: 2px;
+    padding:2px;
+    
+}
+
+.remove{
+    @apply text-red-900 cursor-pointer
+}
+.listitems li{
+    @apply flex items-center justify-between font-medium 
+}

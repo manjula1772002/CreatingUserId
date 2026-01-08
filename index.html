@@ -7,43 +7,47 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
 
-  <body class="m-4">
-    <h1 class="capitalize font-semibold text-center">user id</h1>
-    <div class="mb-4">
-      <label class="block text-sm font-medium text-gray-600  mb-1">
-        User Name
-      </label>
-      <input
-        
-        id="username"
-        type="text"
-        placeholder="Enter user name"
-        class="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-700 "
-      />
-    </div>
+  <body class="m-4 text-center">
+    <section class="w-[50%] m-auto">
+      <div>
+        <h1 class="capitalize font-semibold text-center text-3xl m-4">
+          user id
+        </h1>
+        <!-- user name  -->
+        <div class="mb-4">
+          <label class="block text-start font-medium text-gray-600 mb-1 pl-2"> Name </label>
+          <input
+            required
+            id="username"
+            type="text"
+            placeholder="Enter user name"
+            class="w-full outline-blue-500 rounded-lg text-center border border-gray-300 px-4 py-2 text-gray-700"
+          />
+        </div>
+        <!-- job name  -->
+        <div class="mb-6">
+          <label class="block text-start font-medium text-gray-600 mb-1 pl-2"> Job Role </label>
+          <input
+            required
+            id="jobrole"
+            type="text"
+            placeholder="Enter job role"
+            class="w-full text-center rounded-lg border outline-blue-500 border-gray-300 px-4 py-2 text-gray-700"
+          />
+        </div>
+        <!-- submit  -->
+        <button
+          id="submitData"
+          class="w-full bg-blue-600 text-white font-medium cursor-pointer py-2.5 rounded-lg hover:bg-blue-700"
+        >
+          Add User
+        </button>
 
-    <div class="mb-6">
-      <label class="block text-sm font-medium text-gray-600 mb-1">
-        Job Role
-      </label>
-      <input 
-        id="jobrole"
-        type="text"
-        placeholder="Enter job role"
-        class="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-700 "
-      />
-    </div>
-
-    <button
-      onclick="submitData()"
-      class="w-full bg-blue-600 text-white font-medium py-2.5 rounded-lg hover:bg-blue-700 "
-    >
-      Add User
-    </button>
-
-    <div class="my-6 border-t border-gray-200"></div>
-
-    <div id="result" class="space-y-3"></div>
+        <div class="space-y-3 mt-5 rounded-2xl  p-5 ">
+          <ul id="result" class="listitems"></ul>
+        </div>
+      </div>
+    </section>
 
     <script type="module" src="./src/main.js"></script>
   </body>

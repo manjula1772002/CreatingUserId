@@ -1,34 +1,52 @@
-function submitData() {
-  const username = document.getElementById("username").value.trim();
-  const jobrole = document.getElementById("jobrole").value.trim();
-  const resultDiv = document.getElementById("result");
+const userName =document.getElementById("username");
+const jobRole  =document.getElementById("jobrole");
 
-  if (!username || !jobrole) return;
+const submitBtn=document.getElementById("submitData");
+const resultLi=document.getElementById("result");
 
-  
-  const card = document.createElement("div");
-  card.className =
-    "flex justify-between items-center bg-blue-50 border border-blue-200 rounded-lg p-4";
+submitBtn.addEventListener("click",(e) =>{
+e.preventDefault();
 
-  
-  const textDiv = document.createElement("div");
-  textDiv.innerHTML = `
-    <p class="font-semibold text-gray-800">${username}</p>
-    <p class="text-sm text-gray-600">${jobrole}</p>
-  `;
-
-  
-  const removeBtn = document.createElement("button");
-  removeBtn.innerText = "✖";
-  removeBtn.className =
-    "text-red-500  font-bold text-lg";
-
-  removeBtn.addEventListener("click", () => {
-    card.remove();
-  });
-  card.append(textDiv, removeBtn);
-  resultDiv.append(card);
-
-  document.getElementById("username").value = "";
-  document.getElementById("jobrole").value = "";
+// insertinging value 
+ if(userName.value.length===0 ||jobRole.value.length===0){
+  resultLi.style.display="none";
+  return;
 }
+let names=userName.value ;
+let jobs=jobRole.value;
+
+resultLi.style.display="block";
+
+
+
+
+
+// jobrolefordevloper
+const jobRoleOfEach=document.createElement("div");
+jobRoleOfEach.textContent=jobs
+if(jobs.toLocaleLowerCase()==='developer'){
+  jobRoleOfEach.classList.add("developer-role")
+}else{
+  jobRoleOfEach.classList.add("other-role")
+}
+
+
+
+
+// removebtn 
+const removeBtn=document.createElement("div");
+removeBtn.textContent="X"
+removeBtn.classList.add("remove")
+removeBtn.addEventListener('click',()=>{
+  const fullData=removeBtn.parentElement;
+  fullData.remove();
+})
+// listCreating
+const li = document.createElement("li");
+li.innerText =`${names}`;
+li.append(jobRoleOfEach)
+li.appendChild(removeBtn)
+resultLi.appendChild(li);
+
+
+});
